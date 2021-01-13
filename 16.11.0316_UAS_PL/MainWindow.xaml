@@ -1,0 +1,49 @@
+﻿<Window x:Class="Promos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Promos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="594">
+    <Grid HorizontalAlignment="Left" Width="592">
+        <Rectangle HorizontalAlignment="Left" Margin="55,34,0,66" Stroke="Black" Width="292"/>
+        <Rectangle HorizontalAlignment="Left" Height="154" Margin="352,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Promo Awal Tahun" HorizontalAlignment="Left" Margin="352,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="62,266,0,0" VerticalAlignment="Top"/>
+        <Label Content="Delivery Fee" HorizontalAlignment="Left" Margin="62,292,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Margin="352,195,0,66" Stroke="Black" Width="178"/>
+        <Label Content="Promo" HorizontalAlignment="Left" Margin="62,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.393,0.541"/>
+        <Rectangle VerticalAlignment="Top" Fill="LightGray" Height="1" Margin="69,261,469,0"/>
+        <Label Content="79.000" Name="labelSubtotal" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="269,267,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label x:Name="labelDeliveryFee" Content="8.000" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="269,292,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label x:Name="labelPromoFee" Content="-4.000" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="269,318,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="352,195,0,0" VerticalAlignment="Top"/>
+        <Button Content="Ganti" HorizontalAlignment="Left" Margin="483,77,0,0" VerticalAlignment="Top"/>
+        <Label Content="Diskon 25%" HorizontalAlignment="Left" Margin="358,78,0,0" VerticalAlignment="Top" FontSize="9"/>
+        <Button Content="Ganti" HorizontalAlignment="Left" Margin="483,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Promo Natal" HorizontalAlignment="Left" Margin="358,150,0,0" VerticalAlignment="Top" FontSize="9"/>
+        <Label x:Name="labelBalance" Content="Rp 500.000" HorizontalAlignment="Left" Margin="414,74,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelBalance1" Content="Rp 300.000" HorizontalAlignment="Left" Margin="414,114,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="Diskon 30%" HorizontalAlignment="Left" Margin="358,117,0,0" VerticalAlignment="Top" FontSize="9"/>
+        <Button Content="Ganti" HorizontalAlignment="Left" Margin="483,116,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelGrantTotal" Content="Rp 00.000" HorizontalAlignment="Left" Margin="384,240,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Daftar Pesanan" HorizontalAlignment="Left" Margin="64,39,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox x:Name="listBoxPesanan" Margin="64,70,261,174" MouseLeftButtonUp="listBoxPesanan_ItemClicked">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="15" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding title}" TextAlignment="Left" />
+                        <TextBlock Grid.Row="1" Text="{Binding price}"  TextAlignment="Left" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="buttonAddItem" Content=" + " HorizontalAlignment="Left" Width="45" Height="20" VerticalAlignment="Top" Margin="286,39,0,0" Click="onButtonAddItemClicked"/>
+    </Grid>
+</Window>
